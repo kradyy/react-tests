@@ -1,22 +1,17 @@
 import './App.scss';
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
+import Header from './components/Header'
 import Card from './components/Card'
-import DummyData from './components/DummyData'
+import locations from './data'
 
 function App() {
-  const cardCount = 4;
-
   return (
     <div className="App">
-      <Navbar />
-      <Hero />
+      <Header />
 
       <section className="cards">
-        <Card {...DummyData()} />
-        <Card {...DummyData()} />
-        <Card {...DummyData()} />
-        <Card {...DummyData()} />
+        {locations.map(location => {
+          return <Card {...location} />
+        })}
       </section>
     </div>
   );

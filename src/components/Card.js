@@ -1,25 +1,24 @@
 import React from 'react'
-import star from '../images/star.svg'
 
 export default function Card(props) {
     return (
-        <div class="card">
-            <div className="card-status-label">{props.statusLabel}</div>
-            <img src={require('../images/card' + props.imageId + '.png')} className="card-image" />
-            <div className="card-meta">
-                <img src={star} />
-                <span class="score">{props.stats.score}</span>
-                <span className="review-count">({props.stats.reviewCount}) •</span>
-                <span className="location">{props.location}</span>
+        <div className="card">
+            {props.image && <img className="card--image" src={props.image} />}
+            <div className="card--content">
+                {props.location &&
+                    <>
+                        <img src="./images/pin.svg" /> <span className="card--location">{props.location}</span>
+                    </>
+                }
+
+                {props.googleMaps && <a href="{props.googleMaps}">View on Google Maps</a>}
+
+                <h2>{props.title}</h2>
+
+                <strong>{props.startDate ? props.startDate : 'TBA'} - {props.startDate ? props.endDate : 'TBA'}</strong>
+
+                <p>{props.description}</p>
             </div>
-
-            <p>
-                {props.description}
-            </p>
-
-            <p>
-                <strong>From ${props.price}</strong> / person
-            </p>
-        </div >
+        </div>
     )
 }
