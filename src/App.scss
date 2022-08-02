@@ -1,0 +1,165 @@
+:root {
+  --white: #ffffff;
+  --black: #000;
+  --dark: #222222;
+  --gray: #918e9b;
+  --pink: #ff3cac;
+  --blue: #2b86c5;
+  --purple: #562b7c;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;900&display=swap");
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pink) #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--purple);
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--white);
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  background-image: linear-gradient(
+    0deg,
+    var(--pink) 0%,
+    var(--purple) 52%,
+    var(--blue) 100%
+  );
+  color: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: --var(light);
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.5;
+}
+
+p {
+  margin: 6px 0;
+  font-weight: 400;
+  font-size: 16px;
+  max-width: 320px;
+}
+
+nav {
+  height: 30px;
+  display: flex;
+
+  padding: 30px 36px;
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(232, 150, 224, 0.249);
+
+  .nav {
+    &--logo {
+      max-height: 40px;
+    }
+  }
+}
+
+section {
+  padding: 26px 36px;
+
+  &.cards {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 30px;
+    overflow-x: scroll;
+  }
+
+  &.hero {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+    .inner {
+      align-self: center;
+    }
+
+    img {
+      margin: 32px 50px;
+      max-width: 400px;
+    }
+  }
+}
+
+.card {
+  font-size: 12px;
+  position: relative;
+  min-width: 196px;
+
+  &-status-label {
+    font-size: 10px;
+    position: absolute;
+    background-color: #4158d0;
+    background-image: linear-gradient(
+      43deg,
+      #4158d0 0%,
+      #c850c0 46%,
+      #ffcc70 100%
+    );
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    left: 0;
+    top: 0;
+    margin: 10px;
+    color: var(--white);
+    padding: 5px 6px;
+  }
+
+  &-image {
+    border-radius: 9px;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    box-shadow: 0px 2.98256px 10px rgba(20, 20, 20, 0.207);
+  }
+
+  &-meta {
+    display: flex;
+    margin: 8px 0;
+
+    > span {
+      margin-left: 5px;
+    }
+  }
+
+  span {
+    opacity: 0.9;
+  }
+
+  p {
+    margin: 8px 0;
+  }
+}
